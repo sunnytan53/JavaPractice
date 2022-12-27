@@ -1,15 +1,20 @@
 package sunny.mapper;
 
 import org.apache.ibatis.annotations.Param;
+import org.apache.ibatis.annotations.Select;
 import sunny.pojo.User;
 
 import java.util.List;
 import java.util.Map;
 
 public interface UserMapper {
+
     List<User> selectAll();
 
-    User selectByUserId(int id);
+    User selectByUserId(int id);  // one argument doesn't need @Param
+
+    @Select("select * from user where id = #{id}")
+    User selectByUserIdAnnotation(int id);
 
     // The placeholder should be names of class variables!!!
     List<User> selectByCondition(@Param("name") String name, @Param("newAge") int newAge);

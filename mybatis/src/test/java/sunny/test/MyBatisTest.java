@@ -19,13 +19,11 @@ public class MyBatisTest {
 
     static {
         String resource = "mybatis-config.xml";
-        InputStream inputStream = null;
-        try {
-            inputStream = Resources.getResourceAsStream(resource);
+        try (InputStream inputStream  = Resources.getResourceAsStream(resource)) {
+            sqlSessionFactory = new SqlSessionFactoryBuilder().build(inputStream);
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
-        sqlSessionFactory = new SqlSessionFactoryBuilder().build(inputStream);
     }
 
     @Test
@@ -48,6 +46,16 @@ public class MyBatisTest {
         }
     }
 
+    @Test
+    public void testSelectByUserIdAnnotation() {
+        int id = 1;
+
+        try (SqlSession sqlSession = sqlSessionFactory.openSession()) {
+            UserMapper mapper = sqlSession.getMapper(UserMapper.class);
+            User user = mapper.selectByUserIdAnnotation(id);
+            System.out.println(user);
+        }
+    }
 
     @Test
     public void testSelectByCondition() {
@@ -146,7 +154,7 @@ public class MyBatisTest {
 
     @Test
     public void testDeleteByIds() {
-        int[] ids = {1,2,3};
+        int[] ids = {1, 2, 3};
 
         try (SqlSession sqlSession = sqlSessionFactory.openSession()) {
             UserMapper mapper = sqlSession.getMapper(UserMapper.class);
