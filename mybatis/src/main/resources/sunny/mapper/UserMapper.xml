@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="sunny.mapper.UserMapper">
+    <!--    use resultMap to map (by setter) different names from sql    -->
+    <!--    <select id="selectUsers" resultType="sunny.pojo.User">-->
+    <!--        select * from user-->
+    <!--    </select>-->
+    <!--    -->
+    <resultMap id="UserResultMap" type="sunny.pojo.User">
+        <result column="age" property="newAge"/>
+    </resultMap>
+
+    <select id="selectAll" resultMap="UserResultMap">
+        select *
+        from user;
+    </select>
+    <select id="selectByUserId" resultMap="UserResultMap">
+        select *
+        from user
+        where id = #{id};
+    </select>
+
+    <!--  Dynamic condition -->
+    <!-- A way to fix extra and/or is to make each has and/or and add true to the beginning-->
+    <select id="selectByCondition" resultMap="UserResultMap">
+        select *
+        from user
+        <where>
+            <if test="name != null">
+                and name like #{name}
+            </if>
+            <if test="newAge != null">
+                and age = #{newAge}
+            </if>
+        </where>
+        ;
+    </select>
+    <select id="selectByOneCondition" resultMap="UserResultMap">
+        select *
+        from user
+        <where>
+            <choose>
+                <when test="name != null">
+                    name like #{name}
+                </when>
+                <when test="newAge != null">
+                    age = #{newAge}
+                </when>
+            </choose>
+        </where>
+        ;
+    </select>
+
+    <!-- set *id* to the keyProperty of the instance after insertion -->
+    <insert id="add" useGeneratedKeys="true" keyProperty="id">
+        insert into user (name, age)
+        values (#{name}, #{newAge});
+    </insert>
+
+
+    <update id="update">
+        update user
+        <set>
+            <if test="name != null">
+                name = #{name},
+            </if>
+            <if test="newAge != null">
+                age = #{newAge},
+            </if>
+        </set>
+        where id = #{id};
+    </update>
+
+
+    <delete id="deleteById">
+        delete
+        from user
+        where id = #{id};
+    </delete>
+    <delete id="deleteByIds">
+        delete
+        from user where id in
+        <foreach collection="ids" item="id_item" separator="," open="(" close=")">
+            #{id_item}
+        </foreach>
+        ;
+    </delete>
+
+</mapper>
