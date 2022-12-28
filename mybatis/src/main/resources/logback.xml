@@ -8,7 +8,7 @@
         </encoder>
     </appender>
 
-    <logger name="sunny.mapper.UserMapper">
+    <logger name="org.sunny.mapper.UserMapper">
         <level value="trace"/>
     </logger>
     <root level="error">

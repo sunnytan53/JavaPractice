@@ -2,13 +2,13 @@
 <!DOCTYPE mapper
         PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="sunny.mapper.UserMapper">
+<mapper namespace="org.sunny.mapper.UserMapper">
     <!--    use resultMap to map (by setter) different names from sql    -->
-    <!--    <select id="selectUsers" resultType="sunny.pojo.User">-->
+    <!--    <select id="selectUsers" resultType="pojo.org.sunny.User">-->
     <!--        select * from user-->
     <!--    </select>-->
     <!--    -->
-    <resultMap id="UserResultMap" type="sunny.pojo.User">
+    <resultMap id="UserResultMap" type="org.sunny.pojo.User">
         <result column="age" property="newAge"/>
     </resultMap>
 

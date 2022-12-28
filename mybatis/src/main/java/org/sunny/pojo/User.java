@@ -1,4 +1,4 @@
-package sunny.pojo;
+package org.sunny.pojo;
 
 public class User {
     private String name;

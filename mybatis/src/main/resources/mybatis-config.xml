@@ -22,6 +22,6 @@
     <mappers>
         <!--        use mapper directory to simplify the process of using multiple mappers-->
         <!--        <mapper resource="sunny/mapper/UserMapper.xml"/>-->
-        <package name="sunny/mapper"/>
+        <package name="org/sunny/mapper"/>
     </mappers>
 </configuration>

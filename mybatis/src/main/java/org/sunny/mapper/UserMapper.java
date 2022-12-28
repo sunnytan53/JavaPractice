@@ -1,8 +1,8 @@
-package sunny.mapper;
+package org.sunny.mapper;
 
 import org.apache.ibatis.annotations.Param;
 import org.apache.ibatis.annotations.Select;
-import sunny.pojo.User;
+import org.sunny.pojo.User;
 
 import java.util.List;
 import java.util.Map;
