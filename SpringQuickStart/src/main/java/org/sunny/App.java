@@ -2,7 +2,6 @@ package org.sunny;
 
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
-import org.sunny.dao.Book;
 import org.sunny.service.BookService;
 
 public class App {
@@ -10,9 +9,9 @@ public class App {
         // get IoC container
         ApplicationContext ctx = new ClassPathXmlApplicationContext("applicationContext.xml");
         // get bean(s)
-        // Book bookDao = (Book) ctx.getBean("bookDao");
+        // Book bookDao = (Book) ctx.getBean("bookDaoBean");
         // bookDao.save();
-        BookService bookService = (BookService) ctx.getBean("bookService");
+        BookService bookService = (BookService) ctx.getBean("bookServiceBean");
         bookService.save();
     }
 }

@@ -4,20 +4,25 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7e6d700e-8074-4701-8e54-0e1dae741cbf" name="Changes" comment="init Spring quick start project">
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/sunny/App.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/sunny/dao/Book.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/sunny/dao/BookInterface.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/sunny/service/BookService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/sunny/service/BookServiceInterface.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/applicationContext.xml" afterDir="false" />
+    <list default="true" id="7e6d700e-8074-4701-8e54-0e1dae741cbf" name="Changes" comment="IoC quick start">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/sunny/App.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/sunny/App.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/sunny/service/BookService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/sunny/service/BookService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/applicationContext.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/applicationContext.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/applicationContext.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/applicationContext.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/sunny/App.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/sunny/App.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/sunny/dao/Book.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/sunny/dao/Book.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/sunny/service/BookService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/sunny/service/BookService.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ChangesViewManager">
+    <option name="groupingKeys">
+      <option value="directory" />
+    </option>
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -90,7 +95,8 @@
       <workItem from="1672191219504" duration="77000" />
       <workItem from="1672191644720" duration="284000" />
       <workItem from="1672192260764" duration="1635000" />
-      <workItem from="1672193938744" duration="279000" />
+      <workItem from="1672193938744" duration="774000" />
+      <workItem from="1672194727239" duration="663000" />
     </task>
     <task id="LOCAL-00001" summary="init Spring quick start project">
       <created>1672191687446</created>
@@ -99,7 +105,14 @@
       <option name="project" value="LOCAL" />
       <updated>1672191687446</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="IoC quick start">
+      <created>1672194527698</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1672194527698</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -107,7 +120,8 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="init Spring quick start project" />
-    <option name="LAST_COMMIT_MESSAGE" value="init Spring quick start project" />
+    <MESSAGE value="IoC quick start" />
+    <option name="LAST_COMMIT_MESSAGE" value="IoC quick start" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

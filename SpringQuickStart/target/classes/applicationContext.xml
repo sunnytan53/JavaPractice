@@ -4,6 +4,10 @@
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
 
     <!-- should pass in a valid class (NOT interface) -->
-    <bean id="bookDao" class="org.sunny.dao.Book"/>
-    <bean id="bookService" class="org.sunny.service.BookService"/>
+    <bean id="bookDaoBean" class="org.sunny.dao.Book"/>
+    <bean id="bookServiceBean" class="org.sunny.service.BookService">
+        <!-- configure the relationship between service and dao -->
+        <!-- name = class variable, ref = class id from bean -->
+        <property name="bookDao" ref="bookDaoBean"/>
+    </bean>
 </beans>
