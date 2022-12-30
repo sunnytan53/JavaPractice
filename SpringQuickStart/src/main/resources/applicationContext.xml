@@ -3,11 +3,12 @@
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
 
-    <!-- should pass in a valid class (NOT interface) -->
-    <bean id="bookDaoBean" class="org.sunny.dao.Book"/>
-    <bean id="bookServiceBean" class="org.sunny.service.BookService">
-        <!-- configure the relationship between service and dao -->
-        <!-- name = class variable, ref = class id from bean -->
+    <!-- scope default is singleton means only one object, prototype means new when used  -->
+    <bean id="bookDaoBean" class="org.sunny.dao.Book" scope="prototype"/>
+    <bean id="bookServiceBean" name="altBookService" class="org.sunny.service.BookService" scope="singleton">
+        <!-- call setter to initialize the service, name = class variable, ref = bean id -->
         <property name="bookDao" ref="bookDaoBean"/>
+        <!-- It is also ok to use name for ref, but NOT recommended -->
+        <!-- <property name="bookDao" ref="altBookDao"/> -->
     </bean>
 </beans>
