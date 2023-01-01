@@ -5,10 +5,13 @@
 
     <!-- scope default is singleton means only one object, prototype means new when used  -->
     <bean id="bookDaoBean" class="org.sunny.dao.Book" scope="prototype"/>
-    <bean id="bookServiceBean" name="altBookService" class="org.sunny.service.BookService" scope="singleton">
-        <!-- call setter to initialize the service, name = class variable, ref = bean id -->
-        <property name="bookDao" ref="bookDaoBean"/>
-        <!-- It is also ok to use name for ref, but NOT recommended -->
-        <!-- <property name="bookDao" ref="altBookDao"/> -->
-    </bean>
+    <!-- <bean id="bookServiceBean" name="altBookService" class="org.sunny.service.BookService" scope="singleton"> -->
+    <!--     &lt;!&ndash; call setter to initialize the service, name = class variable, ref = bean id &ndash;&gt; -->
+    <!--     <property name="bookDao" ref="bookDaoBean"/> -->
+    <!--     &lt;!&ndash; It is also ok to use name for ref, but NOT recommended &ndash;&gt; -->
+    <!--     &lt;!&ndash; <property name="bookDao" ref="altBookDao"/> &ndash;&gt; -->
+    <!--     &lt;!&ndash; A primitive type can be passed in using value="..." &ndash;&gt; -->
+    <!--     &lt;!&ndash; constructor injection is done by <constructor-arg> &ndash;&gt; -->
+    <!-- </bean> -->
+    <bean id="bookServiceBean" name="altBookService" class="org.sunny.service.BookService" scope="singleton" autowire="byType"/>
 </beans>
