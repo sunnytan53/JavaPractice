@@ -1,10 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="
+       http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans.xsd
+       http://www.springframework.org/schema/context
+       http://www.springframework.org/schema/context/spring-context.xsd
+       ">
 
+    <!-- read properties file -->
+    <!-- wildcard (before :) can read files in jar, and (after :) can read own files -->
+    <context:property-placeholder location="classpath*:*.properties" system-properties-mode="NEVER"/>
     <!-- scope default is singleton means only one object, prototype means new when used  -->
     <bean id="bookDaoBean" class="org.sunny.dao.Book" scope="prototype">
+        <!-- use placeholder of external property file -->
+        <property name="name" value="${example.name}"/>
         <property name="array">
             <array>
                 <value>100</value>

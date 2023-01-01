@@ -11,6 +11,7 @@ public class Book implements BookInterface, InitializingBean, DisposableBean {
     private Set<Integer> set;
     private Map<String, String> map;
     private Properties properties;
+    private String name;
 
 
     private Book() {
@@ -49,6 +50,10 @@ public class Book implements BookInterface, InitializingBean, DisposableBean {
         this.properties = properties;
     }
 
+    public void setName(String name) {
+        this.name = name;
+    }
+
     @Override
     public String toString() {
         return "Book{" +
@@ -57,6 +62,7 @@ public class Book implements BookInterface, InitializingBean, DisposableBean {
                 ", set=" + set +
                 ", map=" + map +
                 ", properties=" + properties +
+                ", name='" + name + '\'' +
                 '}';
     }
 }
