@@ -1,7 +1,5 @@
 package org.sunny;
 
-import org.springframework.context.ApplicationContext;
-import org.springframework.context.ConfigurableApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 import org.sunny.dao.Book;
 import org.sunny.service.BookService;
@@ -29,6 +27,9 @@ public class App {
         Book book2 = (Book) ctx.getBean("bookDaoBean");
         System.out.print("scope = prototype -> same object = ");
         System.out.println(book == book2);
+
+        // check collection injection
+        System.out.println(book);
 
         // NOT recommended because it is forced to close everything
         // ctx.close();

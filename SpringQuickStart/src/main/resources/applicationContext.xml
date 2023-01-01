@@ -4,7 +4,41 @@
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
 
     <!-- scope default is singleton means only one object, prototype means new when used  -->
-    <bean id="bookDaoBean" class="org.sunny.dao.Book" scope="prototype"/>
+    <bean id="bookDaoBean" class="org.sunny.dao.Book" scope="prototype">
+        <property name="array">
+            <array>
+                <value>100</value>
+                <value>200</value>
+            </array>
+        </property>
+        <property name="list">
+            <list>
+                <value>200</value>
+                <value>400</value>
+            </list>
+        </property>
+        <property name="set">
+            <set>
+                <value>100</value>
+                <value>100</value>
+                <value>200</value>
+                <value>200</value>
+            </set>
+        </property>
+        <property name="map">
+            <map>
+                <entry key="A" value="1"/>
+                <entry key="B" value="2"/>
+            </map>
+        </property>
+        <property name="properties">
+            <props>
+                <prop key="A">1</prop>
+                <prop key="B">2</prop>
+            </props>
+        </property>
+    </bean>
+
     <!-- <bean id="bookServiceBean" name="altBookService" class="org.sunny.service.BookService" scope="singleton"> -->
     <!--     &lt;!&ndash; call setter to initialize the service, name = class variable, ref = bean id &ndash;&gt; -->
     <!--     <property name="bookDao" ref="bookDaoBean"/> -->
@@ -13,5 +47,6 @@
     <!--     &lt;!&ndash; A primitive type can be passed in using value="..." &ndash;&gt; -->
     <!--     &lt;!&ndash; constructor injection is done by <constructor-arg> &ndash;&gt; -->
     <!-- </bean> -->
-    <bean id="bookServiceBean" name="altBookService" class="org.sunny.service.BookService" scope="singleton" autowire="byType"/>
+    <bean id="bookServiceBean" name="altBookService" class="org.sunny.service.BookService" scope="singleton"
+          autowire="byType"/>
 </beans>
