@@ -3,7 +3,6 @@ package org.sunny.pojo;
 public class User {
     private String name;
     private Integer newAge;
-
     private Integer id;
 
     @Override
