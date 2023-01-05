@@ -1,7 +1,6 @@
 package org.sunny;
 
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
-import org.springframework.context.support.ClassPathXmlApplicationContext;
 import org.sunny.config.SpringConfig;
 import org.sunny.dao.Book;
 import org.sunny.service.BookService;
@@ -24,5 +23,7 @@ public class App {
         System.out.println(book == book2);
 
         bookService.save();
+
+        System.out.println(ctx.getBean("thirdPartyBean"));
     }
 }
