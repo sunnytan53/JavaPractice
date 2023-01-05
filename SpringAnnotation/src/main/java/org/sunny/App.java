@@ -25,5 +25,6 @@ public class App {
         bookService.save();
 
         System.out.println(ctx.getBean("thirdPartyBean"));
+        System.out.println(ctx.getBean("thirdPartyBeanWithBeanInjection"));
     }
 }
