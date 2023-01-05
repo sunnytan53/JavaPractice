@@ -18,11 +18,11 @@ public class App {
         System.out.print("scope = singleton -> same object = ");
         System.out.println(bookService == bookService2);
 
-        Book book = (Book) ctx.getBean("bookDaoBean");
-        Book book2 = (Book) ctx.getBean("bookDaoBean");
+        Book book = (Book) ctx.getBean("BookDaoBean");
+        Book book2 = (Book) ctx.getBean("BookDaoBean");
         System.out.print("scope = prototype -> same object = ");
         System.out.println(book == book2);
 
-
+        bookService.save();
     }
 }
