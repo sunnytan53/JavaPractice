@@ -1,7 +1,8 @@
 package org.sunny.aop;
 
+import org.aspectj.lang.ProceedingJoinPoint;
+import org.aspectj.lang.annotation.Around;
 import org.aspectj.lang.annotation.Aspect;
-import org.aspectj.lang.annotation.Before;
 import org.aspectj.lang.annotation.Pointcut;
 import org.springframework.stereotype.Component;
 
@@ -17,8 +18,25 @@ public class MyAdvice {
         // Nothing will execute in this coding block
     }
 
-    @Before("point()")
-    public void method() {  // this is the exact method to run
-        System.out.println("\texecute before point");
+    // @Before("point()")
+    // public void before() {
+    //     System.out.println("\texecute before point");
+    // }
+
+    // @After("point()")
+    // public void after() {
+    //     System.out.println("\texecute after point");
+    // }
+
+    @Around("point()")
+    public Object around(ProceedingJoinPoint pjp) throws Throwable {
+        System.out.println("\texecute before point in around");
+        // we have to specify when to call the target method
+        // we also have to throw exception that occurs in the target method
+        Object proceed = pjp.proceed();
+        System.out.println("\texecute after point in around");
+        return proceed;
     }
+
+    // @AfterReturning and @AfterThrowing is obvious as their name
 }
