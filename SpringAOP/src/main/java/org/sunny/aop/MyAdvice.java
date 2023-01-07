@@ -8,9 +8,13 @@ import org.springframework.stereotype.Component;
 @Component
 @Aspect
 public class MyAdvice {
-    @Pointcut("execution(void org.sunny.dao.Book.update())")
+    // it is better to specify the method from an interface
+    // * means match exactly *1* any layer
+    // .. means match any amount of layers (including 0) BUT slow
+    // + means match the child class of the specified class
+    @Pointcut("execution(void org.sunny.dao.BookInterface.*e())")
     private void point() {  // this means where to execute, like a link
-        // Nothing will execute
+        // Nothing will execute in this coding block
     }
 
     @Before("point()")
