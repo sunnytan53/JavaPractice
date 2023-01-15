@@ -7,7 +7,6 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.sunny.domain.User;
 import org.sunny.domain.User2;
 
-import java.lang.reflect.Array;
 import java.util.Arrays;
 import java.util.List;
 
