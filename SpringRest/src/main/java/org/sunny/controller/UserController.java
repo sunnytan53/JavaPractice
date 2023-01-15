@@ -1,6 +1,5 @@
 package org.sunny.controller;
 
-import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 import org.sunny.domain.User;
 
