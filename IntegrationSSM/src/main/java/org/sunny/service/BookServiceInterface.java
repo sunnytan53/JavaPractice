@@ -1,6 +1,5 @@
 package org.sunny.service;
 
-import org.springframework.stereotype.Service;
 import org.sunny.domain.Book;
 
 import java.util.List;
