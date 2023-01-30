@@ -9,13 +9,13 @@ public class Result {
     public Result() {
     }
 
-    public Result(ResultCode code, Object data) {
+    public Result(Object data, ResultCode code) {
         this.code = code.getCode();
         this.data = data;
         this.msg = "";
     }
 
-    public Result(ResultCode code, Object data, String msg) {
+    public Result(Object data, ResultCode code, String msg) {
         this.code = code.getCode();
         this.data = data;
         this.msg = msg;

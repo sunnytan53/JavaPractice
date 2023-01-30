@@ -16,34 +16,34 @@ public class BookController {
     @PostMapping
     public Result save(Book book) {
         boolean save = bookService.save(book);
-        return new Result(save ? ResultCode.SAVE_OK : ResultCode.SAVE_ERR, save);
+        return new Result(save, save ? ResultCode.SAVE_OK : ResultCode.SAVE_ERR);
     }
 
     @PutMapping
     public Result update(@RequestBody Book book) {
         boolean update = bookService.update(book);
-        return new Result(update ? ResultCode.UPDATE_OK : ResultCode.UPDATE_ERR, update);
+        return new Result(update, update ? ResultCode.UPDATE_OK : ResultCode.UPDATE_ERR);
     }
 
     @DeleteMapping("/{id}")
     public Result delete(@PathVariable Integer id) {
         boolean delete = bookService.delete(id);
-        return new Result(delete ? ResultCode.DELETE_OK : ResultCode.DELETE_ERR, delete);
+        return new Result(delete, delete ? ResultCode.DELETE_OK : ResultCode.DELETE_ERR);
     }
 
     @GetMapping("/{id}")
     public Result getById(@PathVariable Integer id) {
         Book book = bookService.getById(id);
         ResultCode code = (book != null) ? ResultCode.GET_OK : ResultCode.GET_ERR;
-        String msg = (book != null) ? "" : "单条查询操作出现错误";
-        return new Result(code, book, msg);
+        String msg = (book != null) ? "" : "error in single search query";
+        return new Result(book, code, msg);
     }
 
     @GetMapping
     public Result getAll() {
         List<Book> list = bookService.getAll();
         ResultCode code = (list != null) ? ResultCode.GET_OK : ResultCode.GET_ERR;
-        String msg = (list != null) ? "" : "全部查询操作出现错误";
-        return new Result(code, list, msg);
+        String msg = (list != null) ? "" : "error in all search query";
+        return new Result(list, code, msg);
     }
 }
