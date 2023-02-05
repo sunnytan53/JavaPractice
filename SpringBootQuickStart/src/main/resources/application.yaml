@@ -1,0 +1,25 @@
+spring:
+  profiles:
+    active: test
+
+---
+
+#spring:
+#  profiles: pro
+spring:
+  config:
+    activate:
+      on-profile: pro
+server:
+  port: 8080
+
+---
+
+#spring:
+#  profiles: test
+spring:
+  config:
+    activate:
+      on-profile: test
+server:
+  port: 3030
